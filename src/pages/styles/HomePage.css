@@ -1,0 +1,45 @@
+.home-page {
+  display: flex;
+  height: 100vh; /* Full height of the viewport */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.home-left, .home-right {
+  width: 50%;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+.home-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-picture {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; 
+}
+
+.home-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.welcome-message {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
