@@ -1,0 +1,67 @@
+/* Main section styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Profile Section */
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.profile-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+/* Flex container for About Me and Details */
+.profile-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.about-me, .details {
+    width: 45%;
+}
+
+.about-me p, .details p {
+    margin-bottom: 10px;
+}
+
+/* Projects Section */
+.projects {
+    margin: 50px auto;
+    max-width: 1200px;
+    text-align: left;
+    padding: 20px;
+}
+
+.projects h1, .projects h2 {
+    color: #333;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
