@@ -1,67 +1,98 @@
 /* Main section styling */
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
+    text-align: center;
     margin: 0;
     padding: 0;
-}
-
-h1, h2 {
-    margin-bottom: 20px;
-    color: #333;
-}
+    background-image: url(./images/webpageBack.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
 
 /* Profile Section */
-.profile {
+
+
+#profile {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 20px;
+    margin-top: 50px;
 }
 
-.profile-image img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
+
+.profile-heading {
     margin-bottom: 20px;
 }
 
-/* Flex container for About Me and Details */
-.profile-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-    margin-top: 30px;
-    text-align: left;
+.profile-heading h2 {
+    font-size: 24px;
+  }
+  
+.profile-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid beige;
+    border-style:outset;
+    border-width: 5px
 }
 
+/* Flex container for About Me and Details */
+
+.middle-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
 .about-me, .details {
-    width: 45%;
+    width: 30%;
+    text-align: left;
+    background-color: whitesmoke;
+    border-style:outset;
+    border-width: 10px;
+    border-color: beige;
+  
 }
+
+
+
+.about h2, .details h2 {
+    margin-bottom: 5px;
+  }
+
+
+
 
 .about-me p, .details p {
     margin-bottom: 10px;
+    margin-left:10px;
+    margin-right:10px;
 }
 
-/* Projects Section */
-.projects {
-    margin: 50px auto;
-    max-width: 1200px;
-    text-align: left;
-    padding: 20px;
-}
 
-.projects h1, .projects h2 {
-    color: #333;
-}
 
-.project-image img {
-    width: 100%;
-    height: auto;
-    margin-top: 20px;
-}
+#contact {
+    text-align: center;
+    margin: 50px 0;
+  }
+  
+  .contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .social-icon {
+    width: 50px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .social-icon:hover {
+    transform: scale(1.2);
+  }
+  
