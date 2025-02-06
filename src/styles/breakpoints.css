@@ -1,0 +1,11 @@
+
+/* Mobile First Approach */
+/* Tablet and up */
+@media (min-width: 768px) {
+    /* Tablet styles will go here */
+  }
+  
+  /* Desktop and up */
+  @media (min-width: 1024px) {
+    /* Desktop styles will go here */
+  }

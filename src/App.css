@@ -1,0 +1,31 @@
+.App {
+    text-align: center;
+    min-height: 100vh;
+  }
+  
+  .App-header {
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  main {
+    padding-top: 80px; /* Space for fixed navigation */
+  }
+  
+  section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  /* Add some basic spacing for content */
+  h2 {
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    margin-bottom: 1rem;
+  }
