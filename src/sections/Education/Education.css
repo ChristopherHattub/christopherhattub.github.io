@@ -1,0 +1,95 @@
+
+
+/* Custom animations for education section */
+@keyframes slideInLeft {
+    from {
+      transform: translateX(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      transform: translateX(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Add animation classes */
+  .education-image {
+    animation: slideInLeft 0.6s ease-out;
+  }
+  
+  .education-content {
+    animation: slideInRight 0.6s ease-out;
+  }
+  
+  /* Custom scrollbar matching the site theme */
+  .education-section {
+    scrollbar-width: thin;
+    scrollbar-color: #F59D16 transparent;
+  }
+  
+  .education-section::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .education-section::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .education-section::-webkit-scrollbar-thumb {
+    background-color: #F59D16;
+    border-radius: 4px;
+  }
+  
+  /* Image hover effect */
+  .education-image-container {
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .education-image-container:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Custom underline animation for links */
+  .education-link {
+    position: relative;
+    text-decoration: none;
+  }
+  
+  .education-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #F59D16;
+    transition: width 0.3s ease;
+  }
+  
+  .education-link:hover::after {
+    width: 100%;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .education-image,
+    .education-content {
+      animation: none; /* Disable animations on mobile for better performance */
+    }
+    
+    .education-image-container:hover {
+      transform: none; /* Disable hover effect on mobile */
+    }
+  }
