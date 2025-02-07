@@ -2,8 +2,9 @@ import React from 'react';
 import './App.css';
 import Navigation from './components/Navigation/Navigation';
 import Contact from './sections/Contact/Contact';
-import Education from './sections/Education/Education';
 import Projects from './sections/Projects/Projects';
+import Career from './sections/Career/Career';
+import Education from './sections/Education/Education';
 
 function App() {
   return (
@@ -14,11 +15,9 @@ function App() {
       
       <main>
         <Contact />
-
         <Projects />
-
+        <Career />
         <Education />
-        
       </main>
     </div>
   );

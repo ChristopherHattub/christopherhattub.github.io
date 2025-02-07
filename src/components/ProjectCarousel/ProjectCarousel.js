@@ -23,28 +23,86 @@ const ProjectCarousel = ({ projects }) => {
     const { scrollLeft, scrollWidth } = carouselRef.current;
     const scrollEnd = scrollWidth / 3;
     
+    // Only reset position if we're significantly past the boundaries
     if (scrollLeft >= scrollEnd * 2) {
+      // Disable smooth scrolling temporarily
+      carouselRef.current.style.scrollBehavior = 'auto';
       carouselRef.current.scrollLeft = scrollEnd;
+      // Re-enable smooth scrolling
+      setTimeout(() => {
+        carouselRef.current.style.scrollBehavior = 'smooth';
+      }, 50);
     }
-    else if (scrollLeft <= 0) {
+    else if (scrollLeft <= scrollEnd * 0.1) { // Add threshold for left boundary
+      carouselRef.current.style.scrollBehavior = 'auto';
       carouselRef.current.scrollLeft = scrollEnd;
+      setTimeout(() => {
+        carouselRef.current.style.scrollBehavior = 'smooth';
+      }, 50);
     }
   };
 
-  // Handle arrow button hold scrolling
+  // Auto-scroll functionality with improved smoothness
   useEffect(() => {
     let scrollInterval;
+    let animationFrameId;
     
-    if (isHoldingArrow.left || isHoldingArrow.right) {
-      scrollInterval = setInterval(() => {
+    if (isAutoScrolling && carouselRef.current && !isHoldingArrow.left && !isHoldingArrow.right) {
+      let lastTime = performance.now();
+      const scrollStep = () => {
+        const currentTime = performance.now();
+        const deltaTime = currentTime - lastTime;
+        
+        // Adjust scroll speed based on frame time
         if (carouselRef.current) {
-          carouselRef.current.scrollLeft += isHoldingArrow.right ? 1 : -1;
+          carouselRef.current.scrollLeft += (deltaTime * 0.05); // Smoother speed
           handleScrollPosition();
         }
-      }, 30);
+        
+        lastTime = currentTime;
+        animationFrameId = requestAnimationFrame(scrollStep);
+      };
+      
+      animationFrameId = requestAnimationFrame(scrollStep);
     }
 
-    return () => clearInterval(scrollInterval);
+    return () => {
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+      if (scrollInterval) {
+        clearInterval(scrollInterval);
+      }
+    };
+  }, [isAutoScrolling, isHoldingArrow]);
+
+  // Handle arrow button hold scrolling with improved smoothness
+  useEffect(() => {
+    let animationFrameId;
+    
+    if (isHoldingArrow.left || isHoldingArrow.right) {
+      let lastTime = performance.now();
+      const scrollStep = () => {
+        const currentTime = performance.now();
+        const deltaTime = currentTime - lastTime;
+        
+        if (carouselRef.current) {
+          carouselRef.current.scrollLeft += (isHoldingArrow.right ? 1 : -1) * (deltaTime * 0.05);
+          handleScrollPosition();
+        }
+        
+        lastTime = currentTime;
+        animationFrameId = requestAnimationFrame(scrollStep);
+      };
+      
+      animationFrameId = requestAnimationFrame(scrollStep);
+    }
+
+    return () => {
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+    };
   }, [isHoldingArrow]);
 
   // Initial positioning and auto-scroll setup
@@ -58,20 +116,6 @@ const ProjectCarousel = ({ projects }) => {
       setIsAutoScrolling(true);
     }
   }, []); // Empty dependency array means this runs once on mount
-
-  // Auto-scroll functionality
-  useEffect(() => {
-    let scrollInterval;
-    
-    if (isAutoScrolling && carouselRef.current && !isHoldingArrow.left && !isHoldingArrow.right) {
-      scrollInterval = setInterval(() => {
-        carouselRef.current.scrollLeft += 1;
-        handleScrollPosition();
-      }, 30);
-    }
-
-    return () => clearInterval(scrollInterval);
-  }, [isAutoScrolling, isHoldingArrow]);
 
   // Mouse event handlers for dragging
   const handleMouseDown = (e) => {

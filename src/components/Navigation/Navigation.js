@@ -8,30 +8,47 @@ const Navigation = () => {
   // Handle scroll to update active section
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['contact', 'education', 'projects'];
-      const scrollPosition = window.scrollY + 100; // Offset for nav height
+      const sections = ['contact', 'projects', 'career', 'education'];
+      const navHeight = document.querySelector('.navigation').offsetHeight;
+      const scrollPosition = window.scrollY + navHeight + 100;
 
-      for (const section of sections) {
+      // Find the section that takes up the most viewport space
+      let maxVisibleSection = null;
+      let maxVisibleHeight = 0;
+
+      sections.forEach(section => {
         const element = document.getElementById(section);
         if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section);
-            break;
+          const rect = element.getBoundingClientRect();
+          const visibleHeight = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+          
+          if (visibleHeight > maxVisibleHeight) {
+            maxVisibleHeight = visibleHeight;
+            maxVisibleSection = section;
           }
         }
+      });
+
+      if (maxVisibleSection) {
+        setActiveSection(maxVisibleSection);
       }
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Call once on mount
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   // Smooth scroll to section
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
+    const navHeight = document.querySelector('.navigation').offsetHeight;
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: elementPosition - navHeight,
+        behavior: 'smooth'
+      });
     }
   };
 
@@ -39,7 +56,7 @@ const Navigation = () => {
     <nav className="navigation">
       <div className="nav-container">
         <ul className="nav-list">
-          {['Contact', 'Projects', 'Education'].map((item) => (
+          {['Contact', 'Projects', 'Career', 'Education'].map((item) => (
             <li key={item} className="nav-item">
               <button
                 className={`nav-link ${activeSection === item.toLowerCase() ? 'active' : ''}`}
