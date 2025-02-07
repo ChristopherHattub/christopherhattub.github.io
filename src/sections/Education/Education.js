@@ -6,7 +6,12 @@ const Education = () => {
 
   return (
     <section id="education" className="education-section min-h-screen flex items-center justify-center py-16 bg-white">
-      <div className="container mx-auto px-4">
+      {/* Add background shapes */}
+      <div className="education-header-shape"></div>
+      <div className="education-content-shape"></div>
+
+      {/* Wrap existing content in education-container for proper z-indexing */}
+      <div className="education-container container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Desktop: side-by-side, Mobile: stacked */}
           <div className="flex flex-col lg:flex-row items-center gap-8">

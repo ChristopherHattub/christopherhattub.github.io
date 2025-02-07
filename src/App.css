@@ -9,16 +9,16 @@
   }
   
   main {
-    padding-top: 80px; /* Space for fixed navigation */
+    padding-top: 0; /* Remove the top padding */
   }
   
   section {
-    min-height: 100vh;
+    min-height: 85vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: 0 1.5rem; /* Remove vertical padding */
   }
   
   /* Add some basic spacing for content */

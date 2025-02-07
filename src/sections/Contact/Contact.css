@@ -1,82 +1,292 @@
 /* src/sections/Contact/Contact.css */
 
-.profile-container {
-    position: relative;
-    width: 200px !important;  /* Force specific width */
-    height: 200px !important; /* Force specific height */
-    margin: 0 auto;
-    transition: transform 0.3s ease;
-  }
-  
-  .profile-image {
-    width: 200px !important;  /* Force specific width */
-    height: 200px !important; /* Force specific height */
-    
-    object-fit: cover;
-    border-radius: 50%;
-  }
-  
-  .profile-background {
-    animation: pulse 3s infinite;
-  }
-  
-  @keyframes pulse {
+@keyframes jumpIn {
     0% {
-      transform: scale(0.95);
+        transform: scale(0) translate(-50%, -50%);
+        opacity: 0;
     }
     50% {
-      transform: scale(1);
+        transform: scale(1.1) translate(-50%, -50%);
     }
     100% {
-      transform: scale(0.95);
+        transform: scale(1) translate(-50%, -50%);
+        opacity: 1;
     }
-  }
-  
-  .social-link {
+}
+
+@keyframes jumpInProfile {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes flipUp {
+    0% {
+        transform: perspective(400px) rotateX(90deg);
+        opacity: 0;
+    }
+    100% {
+        transform: perspective(400px) rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+.contact-section {
+    min-height: 85vh !important; /* Further reduced */
+    padding: 1rem 0 !important; /* Reduced vertical padding */
+}
+
+.contact-container {
+    position: relative;
+    z-index: 1; /* Ensure container is above background shapes */
+}
+
+.profile-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2; /* Ensure container is above other elements */
+    opacity: 0;
+    animation: jumpInProfile 0.5s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative;
+    z-index: 3; /* Ensure image is topmost */
+}
+
+.profile-background {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.social-link {
     transition: transform 0.2s ease;
-  }
-  
-  .social-link:hover {
+}
+
+.social-link:hover {
     transform: translateY(-2px);
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
     .contact-grid {
-      gap: 2rem;
+        gap: 2rem;
     }
     
     .text-container {
-      text-align: center !important;
+        text-align: center !important;
     }
-  
-    .profile-container,
+
+    .profile-container {
+        width: 150px;
+        height: 150px;
+    }
+
     .profile-image {
-      width: 150px !important;  /* Smaller size for mobile */
-      height: 150px !important;
+        width: 150px;
+        height: 150px;
     }
-  }
-  
-  /* Loading state for profile image */
-  .profile-image.loading {
+
+    .profile-background {
+        width: 170px;
+        height: 170px;
+    }
+}
+
+/* Loading state for profile image */
+.profile-image.loading {
     opacity: 0.5;
-  }
-  
-  /* Custom scrollbar for the section */
-  .contact-section {
+}
+
+/* Custom scrollbar for the section */
+.contact-section {
     scrollbar-width: thin;
     scrollbar-color: #F59D16 transparent;
-  }
-  
-  .contact-section::-webkit-scrollbar {
+}
+
+.contact-section::-webkit-scrollbar {
     width: 8px;
-  }
-  
-  .contact-section::-webkit-scrollbar-track {
+}
+
+.contact-section::-webkit-scrollbar-track {
     background: transparent;
-  }
-  
-  .contact-section::-webkit-scrollbar-thumb {
+}
+
+.contact-section::-webkit-scrollbar-thumb {
     background-color: #F59D16;
     border-radius: 4px;
-  }
+}
+
+/* Update Background Shapes */
+.background-circle {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    opacity: 0;
+    z-index: 0; /* Ensure it stays behind */
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    animation: jumpIn 0.5s ease-out forwards;
+}
+
+.background-rectangle {
+    position: absolute;
+    width: 400px; /* Reduced from 450px */
+    height: 800px; /* Double the width */
+    background-color: var(--color-secondary);
+    opacity: .0; /* Fully visible */
+    z-index: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.background-rectangle-left {
+    right: 50%;
+    border-radius: 400px 0 0 400px;
+    margin-right: 0;
+}
+
+.background-rectangle-right {
+    left: 50%;
+    border-radius: 0 400px 400px 0;
+    margin-left: 0;
+}
+
+/* Update text containers to align with background shapes */
+.text-container {
+    position: relative;
+    width: 280px; /* Set consistent width */
+    height: auto; /* Let height be determined by content */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+    z-index: 1;
+    gap: 2rem; /* Gap between text sections */
+}
+
+/* Add styles for text section containers */
+.text-section {
+    background-color: var(--color-tertiary);
+    border-radius: var(--border-radius-lg);
+    padding: 1.5rem;
+    color: white;
+    min-height: 120px; /* Set minimum height for consistency */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    opacity: 0;
+    animation: flipUp 0.5s ease-out forwards;
+    animation-delay: 0.6s;
+}
+
+.text-section:nth-child(1) {
+    animation-delay: 0.6s;
+}
+
+.text-section:nth-child(2) {
+    animation-delay: 0.7s;
+}
+
+.text-section:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+.text-section:nth-child(4) {
+    animation-delay: 0.9s;
+}
+
+.text-1g {
+    font-size: 2.3rem;
+    font-style: italic;
+}
+
+.text-lg {
+    font-size: 1.4rem;
+    font-style: italic;
+}
+
+a[href="mailto:chris.hattub@gmail.com"]{
+    font-size: 1.1rem;
+}
+
+.text-2xl {
+    font-weight:bold;
+    color: var(--color-primary);
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2.2rem;
+    
+}
+/* Update container to accommodate larger shapes */
+.columns-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem; /* Reduced from 4rem for closer spacing */
+    position: relative;
+    width: 100%;
+    max-width: 900px; /* Reduced from 1000px */
+    margin: 0 auto;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .columns-wrapper {
+        gap: 2.5rem;
+        max-width: 850px;
+    }
+}
+
+@media (max-width: 992px) {
+    .columns-wrapper {
+        gap: 2rem;
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 768px) {
+    .columns-wrapper {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .text-container {
+        width: 280px; /* Keep consistent width on mobile */
+        max-width: 100%;
+        gap: 1rem;
+    }
+
+    .text-section {
+        min-height: 100px; /* Slightly smaller on mobile */
+    }
+}

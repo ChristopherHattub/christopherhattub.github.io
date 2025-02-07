@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ProjectCarousel from '../../components/ProjectCarousel/ProjectCarousel';
 import './Projects.css';
 
 const Projects = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Wait for contact animations (0.8s) plus 0s delay
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 800); // 800ms for contact animations only, removed the 2s delay
+
+    return () => clearTimeout(timer);
+  }, []);
+
   // Sample project data
   const projects = [
     {
@@ -42,9 +53,15 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="projects-section">
+    <section 
+      id="projects" 
+      className={`projects-section ${isVisible ? 'visible animate-expand' : ''}`}
+    >
       <div className="projects-container">
-        <h2 className="section-title">Projects</h2>
+        <div className="section-title-wrapper">
+          <div className="title-background-shape"></div>
+          <h2 className="section-title">Projects</h2>
+        </div>
         <ProjectCarousel projects={projects} />
       </div>
     </section>

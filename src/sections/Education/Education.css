@@ -1,4 +1,9 @@
-
+/* Add at the top of the file */
+.education-section {
+    min-height: 85vh !important; /* Further reduced */
+    padding: 1rem 0 !important; /* Reduced vertical padding */
+    position: relative;
+}
 
 /* Custom animations for education section */
 @keyframes slideInLeft {
@@ -93,3 +98,48 @@
       transform: none; /* Disable hover effect on mobile */
     }
   }
+
+/* Update the background shapes styles */
+.education-header-shape {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  width: 42%; /* Slightly wider than the image */
+  aspect-ratio: 1; /* Make it square */
+  background-color: var(--color-primary);
+  border-radius: 20px;
+  z-index: 0;
+  opacity: 0.1;
+}
+
+.education-content-shape {
+  position: absolute;
+  top: 50%;
+  left: 75%; /* Align with the right half */
+  transform: translate(-50%, -50%);
+  width: 45%; /* Match the width of the text container */
+  height: 80%; /* Match the height of the content */
+  background-color: var(--color-tertiary);
+  border-radius: 40px;
+  z-index: 0;
+  opacity: 0.1; /* Make it subtle */
+}
+
+.education-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Add responsive adjustments */
+@media (max-width: 1024px) {
+  .education-header-shape {
+    top: 25%;
+    left: 50%;
+    width: 85%;
+  }
+
+  .education-content-shape {
+    top: 75%;
+  }
+}

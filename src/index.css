@@ -1,6 +1,7 @@
 @import './styles/variables.css';
 @import './styles/animations.css';
 @import './styles/breakpoints.css';
+@import './styles/fonts.css';
 
 * {
   margin: 0;
