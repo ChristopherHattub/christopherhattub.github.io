@@ -70,6 +70,7 @@
     border-radius: 50%;
     position: relative;
     z-index: 3; /* Ensure image is topmost */
+    border: 8px solid var(--color-tertiary); /* Doubled from 4px to 8px */
 }
 
 .profile-background {
@@ -110,6 +111,7 @@
     .profile-image {
         width: 150px;
         height: 150px;
+        border: 8px solid var(--color-tertiary); /* Doubled from 4px to 8px */
     }
 
     .profile-background {
