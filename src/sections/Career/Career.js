@@ -9,77 +9,62 @@ const Career = () => {
   
   const careerPositions = [
     {
-      title: "Senior Software Engineer",
-      company: "Tech Innovations Inc",
+      title: "Web and Systems Developer",
+      company: "Fall River Florist Supply",
       period: "2023 - Present",
-      description: "Leading development of enterprise-scale applications using modern technologies. Mentoring junior developers and architecting scalable solutions.",
-      image: "path/to/image1.jpg"
+      description: `
+      
+      A local company in my hometown where I worked as a systems programmer and web developer. .I started as a warehouse worker in highschool, then a van driver and eventually their IT Systems Devloper once I graduated college. I played a big part in designing the companys website and internal RPG database system.`,
+      image: "/assets/career-images/fall-river-florist-supply.jpeg"
     },
     {
-      title: "Full Stack Developer",
-      company: "Digital Solutions Co",
-      period: "2021 - 2023",
-      description: "Developed and maintained full-stack applications using React, Node.js, and AWS. Implemented CI/CD pipelines and automated testing.",
-      image: "path/to/image2.jpg"
+      title: "Network Technician",
+      company: "UNH InterOperability Laboratory",
+      period: "Nov 2019 – Nov 2021",
+      description: `Conducted conformance testing on hardware and software, collaborating with vendors and leading a project team.
+
+      • Executed internet conformance and interoperability certification testing for third-party network hardware
+        and software.
+      
+      • Co-led a 5-person team in developing specifications, test plans, Agile storyboards, and test scripts.
+      
+      • Maintained daily communication with vendors to provide updates, implement changes, and guarantee
+        customer success.`,
+      image: "/assets/career-images/unhIOL.png"
     },
-    {
-      title: "Web Developer",
-      company: "Creative Agency",
-      period: "2020 - 2021",
-      description: "Created responsive web applications and e-commerce solutions. Collaborated with design team to implement pixel-perfect UIs.",
-      image: "path/to/image3.jpg"
-    },
-    {
-      title: "Frontend Developer",
-      company: "StartUp Labs",
-      period: "2019 - 2020",
-      description: "Built interactive user interfaces using React and modern CSS. Optimized application performance and implemented analytics.",
-      image: "path/to/image4.jpg"
-    },
-    {
-      title: "Junior Developer",
-      company: "Tech Academy",
-      period: "2018 - 2019",
-      description: "Developed educational web platforms and learning management systems. Implemented responsive designs and accessibility features.",
-      image: "path/to/image5.jpg"
-    }
+    
+    
   ];
 
   const otherPositions = [
-    {
-      title: "Crew Member",
-      company: "Dunkin' Donuts",
-      period: "2014 - 2015",
-      description: "Provided excellent customer service in a fast-paced environment. Managed food preparation, cash handling, and store cleanliness while maintaining efficiency during peak hours.",
-      image: "path/to/dunkin.jpg"
-    },
+   
     {
       title: "Crew Member",
       company: "Jersey Mike's",
-      period: "2013 - 2014",
+      period: "2022 - 2023",
       description: "Prepared high-quality sandwiches while ensuring customer satisfaction. Maintained food safety standards and handled cash transactions accurately.",
-      image: "path/to/jerseymikes.jpg"
+      image: "/assets/career-images/jersey-mikes.jpeg"
     },
     {
-      title: "Sales Associate",
-      company: "Best Buy",
-      period: "2013",
+      title: "Warehouse Worker/Van Driver",
+      company: "Fall River Florist Supply",
+      period: "2015-2017",
       description: "Assisted customers with electronics purchases and provided technical support. Maintained product knowledge to offer informed recommendations.",
-      image: "path/to/bestbuy.jpg"
+      image: "/assets/career-images/fall-river-florist-supply.jpeg"
     },
     {
-      title: "Server",
-      company: "Local Restaurant",
-      period: "2012 - 2013",
-      description: "Delivered exceptional dining experiences through attentive service. Managed multiple tables while maintaining high customer satisfaction.",
-      image: "path/to/restaurant.jpg"
+        title: "Crew Member",
+        company: "Dunkin' Donuts",
+        period: "2015 - 2019",
+        description: "Provided excellent customer service in a fast-paced environment. Managed food preparation, cash handling, and store cleanliness while maintaining efficiency during peak hours.",
+        image: "/assets/career-images/dunkin-donuts.jpg"
     },
     {
       title: "Camp Counselor",
       company: "Summer Youth Program",
-      period: "2012",
+      period: "2014-2015",
       description: "Led activities and supervised groups of children. Developed and implemented educational and recreational programs.",
-      image: "path/to/camp.jpg"
+      image: "/assets/career-images/camp.png"
     }
   ];
 
@@ -93,7 +78,7 @@ const Career = () => {
       }, 5000);
     }
     return () => clearInterval(interval);
-  }, [isAutoScrolling, showOtherMenu, isOtherPosition]);
+  }, [isAutoScrolling, showOtherMenu, isOtherPosition, careerPositions.length]);
 
   const handlePositionClick = (index, fromOtherMenu = false) => {
     setIsAutoScrolling(false);

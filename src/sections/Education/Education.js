@@ -47,13 +47,13 @@ const Education = () => {
                     <p className="text-gray-600">University of New Hampshire, 2018-2023</p>
                     <p className="text-gray-600">
                       Relevant coursework in software development, algorithms, and data structures.
-                      Graduated with honors.
+        
                     </p>
                   </div>
 
                   {/* Additional Certifications */}
                   <div className="space-y-2">
-                    <h3 className="text-xl font-semibold text-[#F59D16]">Professional Certifications</h3>
+                    <h3 className="text-xl font-semibold text-[#F59D16]">.</h3>
                     <ul className="space-y-4">
                       
                     </ul>

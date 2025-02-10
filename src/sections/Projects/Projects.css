@@ -70,7 +70,7 @@
 }
 
 .projects-section.animate-expand {
-    animation: expandProjects 2.7s cubic-bezier(0.23, 0.8, 0.3, 1) forwards;
+    animation: expandProjects 3.3s cubic-bezier(0.23, 0.8, 0.3, 1) forwards;
 }
 
 .projects-container {
@@ -163,7 +163,7 @@
     top: 0;
     left: 0;
     padding: 1rem;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.37);
     color: white;
     max-width: 80%;
 }
