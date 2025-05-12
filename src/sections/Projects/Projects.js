@@ -20,33 +20,33 @@ const Projects = () => {
       id: 1,
       title: "Project 1",
       description: "A brief description of project 1",
-      image: "/assets/project-images/project1.jpeg"
+      image: "/assets/project-images/under-construction.jpg"
     },
     {
       id: 2,
       title: "Project 2",
       description: "A brief description of project 2",
-      image: "/assets/project-images/project2.jpeg"
+      image: "/assets/project-images/under-construction.jpg"
     },
     {
       id: 3,
       title: "Project 3",
       description: "A brief description of project 3",
-      image: "/assets/project-images/project3.png"
+      image: "/assets/project-images/under-construction.jpg"
     },
 
     {
       id: 4,
       title: "Project 4",
       description: "A brief description of project 4",
-      image: "/assets/project-images/project4.png"
+      image: "/assets/project-images/under-construction.jpg"
     },
 
     {
       id: 5,
       title: "Project 5",
       description: "A brief description of project 5",
-      image: "/assets/project-images/project3.png"
+      image: "/assets/project-images/under-construction.jpg"
     },
     
     // Add more projects as needed
