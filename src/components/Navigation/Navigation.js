@@ -9,8 +9,6 @@ const Navigation = () => {
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['contact', 'projects', 'career', 'education'];
-      const navHeight = document.querySelector('.navigation').offsetHeight;
-      const scrollPosition = window.scrollY + navHeight + 100;
 
       // Find the section that takes up the most viewport space
       let maxVisibleSection = null;
