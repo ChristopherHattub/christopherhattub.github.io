@@ -18,35 +18,35 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Project 1",
-      description: "A brief description of project 1",
-      image: "/assets/project-images/under-construction.jpg"
+      title: "IdeaBall",
+      description: "application for organizing lists of ideas",
+      image: "/assets/project-images/construction.png"
     },
     {
       id: 2,
-      title: "Project 2",
-      description: "A brief description of project 2",
-      image: "/assets/project-images/under-construction.jpg"
+      title: "TodoTracker",
+      description: "Custom todo list app that allows users to track their progress and goals",
+      image: "/assets/project-images/construction.png"
     },
     {
       id: 3,
-      title: "Project 3",
-      description: "A brief description of project 3",
-      image: "/assets/project-images/under-construction.jpg"
+      title: "Gas and Oil Spending Prediction Model",
+      description: "Predicting gas and oil spending based on historical data and weather data",
+      image: "/assets/project-images/construction.png"
     },
 
     {
       id: 4,
       title: "Project 4",
-      description: "A brief description of project 4",
-      image: "/assets/project-images/under-construction.jpg"
+      description: "Placeholder",
+      image: "/assets/project-images/construction.png"
     },
 
     {
       id: 5,
       title: "Project 5",
-      description: "A brief description of project 5",
-      image: "/assets/project-images/under-construction.jpg"
+      description: "placeholder",
+      image: "/assets/project-images/construction.png"
     },
     
     // Add more projects as needed
