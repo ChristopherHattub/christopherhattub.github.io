@@ -20,33 +20,33 @@ const Projects = () => {
       id: 1,
       title: "IdeaBall",
       description: "application for organizing lists of ideas",
-      image: "/assets/project-images/construction.png"
+      image: `${process.env.PUBLIC_URL}/assets/project-images/construction.png`
     },
     {
       id: 2,
       title: "TodoTracker",
       description: "Custom todo list app that allows users to track their progress and goals",
-      image: "/assets/project-images/construction.png"
+      image: `${process.env.PUBLIC_URL}/assets/project-images/construction.png`
     },
     {
       id: 3,
       title: "Gas and Oil Spending Prediction Model",
       description: "Predicting gas and oil spending based on historical data and weather data",
-      image: "/assets/project-images/construction.png"
+      image: `${process.env.PUBLIC_URL}/assets/project-images/construction.png`
     },
 
     {
       id: 4,
       title: "Project 4",
       description: "Placeholder",
-      image: "/assets/project-images/construction.png"
+      image: `${process.env.PUBLIC_URL}/assets/project-images/construction.png`
     },
 
     {
       id: 5,
       title: "Project 5",
       description: "placeholder",
-      image: "/assets/project-images/construction.png"
+      image: `${process.env.PUBLIC_URL}/assets/project-images/construction.png`
     },
     
     // Add more projects as needed
