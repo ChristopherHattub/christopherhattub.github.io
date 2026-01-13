@@ -15,7 +15,7 @@ const Projects = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Sample project data
+  // 
   const projects = [
     {
       id: 1,
@@ -38,8 +38,8 @@ const Projects = () => {
 
     {
       id: 4,
-      title: "Project 4",
-      description: "Placeholder",
+      title: "Iphone to Android Secure Data Transfer Shortcut Applications",
+      description: "A collection of shortcut applications that allow users to prepare data for transfer from their iPhone to their Android device, without using a any third party data processing.",
       image: constructionImage
     },
 
@@ -50,7 +50,7 @@ const Projects = () => {
       image: constructionImage
     },
     
-    // Add more projects as needed
+    // 
   ];
 
   return (

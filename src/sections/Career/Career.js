@@ -9,19 +9,20 @@ const Career = () => {
   
   const careerPositions = [
     {
-      title: "Web and Systems Developer",
+      title: "Dedicated RPG Programmer and Software Systems Developer",
       company: "Fall River Florist Supply",
-      period: "2023 - Present",
-      description: `
+      period: "2023 - 2025",
+      description: `Specialized in streamlining wholesale operations through custom software enhancements. Proven success in automating inventory tracking and order processing using RPG IV and CL, resulting in a 30% reduction in manual data entry and improved shipping accuracy.
+Engineered and deployed full‑stack web application features using modern frameworks(React.js,Node.js) to enhance customer engagement and streamline the online ordering process.
       
       A local company in my hometown where I worked as a systems programmer and web developer. .I started as a warehouse worker in highschool, then a van driver and eventually their IT Systems Devloper once I graduated college. I played a big part in designing the companys website and internal RPG database system.`,
       image: "/assets/career-images/fall-river-florist-supply.jpeg"
     },
     {
-      title: "Network Technician",
+      title: "Hardware Test Engineer",
       company: "UNH InterOperability Laboratory",
       period: "Nov 2019 – Nov 2021",
-      description: `Conducted conformance testing on hardware and software, collaborating with vendors and leading a project team.
+      description: `Performed conformance, interoperability, and certification testing for third‑party network hardware and software, ensuring compliance with industry standards (IEEE, IETF, and others).
 
       • Executed internet conformance and interoperability certification testing for third-party network hardware
         and software.
